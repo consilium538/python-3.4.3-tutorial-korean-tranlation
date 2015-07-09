@@ -1,0 +1,138 @@
+파이썬 3.4.3 튜토리얼
+
+파이썬 튜토리얼
+
+파이썬은 배우기 쉬우면서도 강력한 프로그래밍 언어입니다. 효율적인 하이 레벨 데이터 구조를 가지고 있으며, 간단하지만 효과적인 방법으로 객체 지향 프로그래밍을 달성합니다. 파이썬의 우아한 구문과 동적 타이핑은 인터프리트된 언어의 성질과 어울려 파이썬을 대부분의 플랫폼에서 스크립팅과 신속한 애플리케이션 개발을 위한 이상적인 언어로 만들어줍니다. 
+
+파이썬 인터프리터와 광범위한 표준 라이브러리는 모든 주요 플랫폼에 대한 소스 또는 바이너리 형식으로 파이썬 웹 사이트(https://www.python.org/)에서  자유롭게 사용할 수 있으며, 자유롭게 배포 할 수있습니다. 이 사이트에는 타사의 많은 무료 파이썬 모듈, 프로그램 및 도구, 추가 설명서의 분포와 포인터도 있습니다. 
+
+파이썬 인터프리터는 C 또는 C ++ (또는 C에서 파생된 다른 언어)에서 구현된 데이터 유형 과 새로운 기능을 통해 쉽게 확장할 수 있습니다. 또한 파이썬은 사용자 정의 응용 프로그램의 확장 언어로 적합합니다.  
+
+표준 개체 및 모듈에 대한 설명은 파이썬 표준 라이브러리를 참조하십시오. 파이썬 언어 레퍼런스는 보다 형식적인 정의를 제공합니다. C 또는 C ++에서 확장을 작성하려면, 확장 및 파이썬 인터프리터 및 Python / C API 참조 설명서를 포함하기를 읽으세요. 파이썬을 깊이 다루는 여러 권의 책도 있다.
+
+이 튜토리얼은 모든 단일 기능, 또는 모든 일반적으로 사용되는 모든 기능을 커버하지 않습니다. 대신, 파이썬의 가장 주목할만한 기능을 소개하고, 당신에게 언어의 맛과 스타일을 더 잘 이해할 수 있게 해줍니다(좋은 아이디어를 줄 것이다). 이것을 읽고 나면, 당신은 파이썬 모듈 및 프로그램을 작성할 수있을 것이고 파이썬 표준 라이브러리에 설명된 다양한 파이썬 라이브러리 모듈에 대한 자세한 내용을 읽을 준비가 된 것입니다.
+
+1. 입맛 돋우기
+2. 파이썬 인터프리터(interpreter) 사용
+2.1. 인터프리터 호출
+2.1.1. 인수(arguement) Passing
+2.1.2. 인터랙티브 모드(interactive mode)
+2.2. 인터프리터와 인터프리터 환경
+2.2.1. 소스코드(source code) 인코딩
+3. 비공식적인 파이썬 소개
+3.1. 파이썬을 계산기로 사용하기
+3.1.1. 숫자(numbers)
+3.1.2. 문자열(strings)
+3.1.3. 목록(lists)
+3.2. 프로그래밍을 향한 첫걸음
+4. More Control Flow Tools
+4.1. if 문(statements)
+4.2. for 문
+4.3. range() 함수(functions)
+4.4. break 와 continue 문, 루프에서의 else 절(clauses)
+4.5. pass 문
+4.6. 함수 정의하기
+4.7. 함수 정의 더 알아보기
+4.7.1. 기본 인수 값
+4.7.2. 키워드 인수
+4.7.3. 임의의 인수 목록
+4.7.4. 인수 목록 풀기
+4.7.5. 람다(lambda) 표현
+4.7.6. 문서 문자열
+4.7.7. Function Annotations
+4.8. 간주곡: 코딩 스타일
+5. 자료 구조(data structure)
+5.1. 목록 더 알아보기
+5.1.1. 목록를 스택(Stacks)으로 사용하기
+5.1.2. 목록을 줄(Queues)로 사용하기
+5.1.3. 목록 Comprehensions
+5.1.4. Nested 목록Comprehensions
+5.2. del 문
+5.3. 터플(Tuples)과 시퀀스(Sequences)
+5.4. 집합(Sets)
+5.5. 사전(Dictionaries)
+5.6. 루프 테크닉
+5.7. 조건문(conditions) 더 알아보기
+5.8. Comparing Sequences and Other Types
+6. 모듈(Modules)
+6.1. 모듈 더 알아보기
+6.1.1. 모듈을 스크립트(scripts)로 실행하기
+6.1.2. 모듈 검색 경로
+6.1.3. 컴파일(compile)된 파이썬 파일
+6.2. 표준 모듈(Standard Modules)
+6.3. dir() 함수
+6.4. 패키지(Packages)
+6.4.1. 패키지에서 * 임포트(import)하기
+6.4.2. Intra-package References
+6.4.3. Packages in Multiple Directories
+7. 입력(Input)과 출력(Output)
+7.1. Fancier Output Formatting
+7.1.1. Old string formatting
+7.2. Reading and Writing Files
+7.2.1. Methods of File Objects
+7.2.2. Saving structured data with json
+8. 오류(Errors)와 예외(Exceptions)
+8.1. 구문(Syntax) 오류
+8.2. 예외
+8.3. 예외 처리하기
+8.4. Raising Exceptions
+8.5. User-defined Exceptions
+8.6. Defining Clean-up Actions
+8.7. Predefined Clean-up Actions
+9. 클래스(Classes)
+9.1. A Word About Names and Objects
+9.2. Python Scopes and Namespaces
+9.2.1. Scopes and Namespaces Example
+9.3. 클래스와의 첫 만남
+9.3.1. 클래스 정의 구문
+9.3.2. 클래스 객체(Objects)
+9.3.3. 인스턴스(Instance) 객체
+9.3.4. 메소드(Method) 객체
+9.3.5. 클래스와 인스턴스 변수(variables)
+9.4. Random Remarks
+9.5. 상속(Inheritance)
+9.5.1. Multiple Inheritance
+9.6. Private Variables
+9.7. Odds and Ends
+9.8. Exceptions Are Classes Too
+9.9. Iterators
+9.10. Generators
+9.11. Generator Expressions
+10. 표준 라이브러리(standard library) 맛보기
+10.1. 운영체제(Operating System) Interface
+10.2. File Wildcards
+10.3. Command Line Arguments
+10.4. Error Output Redirection and Program Termination
+10.5. String Pattern Matching
+10.6. Mathematics
+10.7. Internet Access
+10.8. Dates and Times
+10.9. Data Compression
+10.10. Performance Measurement
+10.11. Quality Control
+10.12. 건전지 포함
+11. 스탠다드 라이브러리 맛보기 2
+11.1. Output Formatting
+11.2. Templating
+11.3. Working with Binary Data Record Layouts
+11.4. Multi-threading
+11.5. Logging
+11.6. Weak References
+11.7. Tools for Working with Lists
+11.8. Decimal Floating Point Arithmetic
+12. Virtual Environments and Packages
+12.1. Introduction
+12.2. 가상 환경 만들기
+12.3. pip로 패키지 관리하기
+13. What Now?
+14. Interactive Input Editing and History Substitution
+14.1. Tab Completion and History Editing
+14.2. Alternatives to the Interactive Interpreter
+15. Floating Point Arithmetic: Issues and Limitations
+15.1. Representation Error
+16. 부록
+16.1. 인터랙티브 모드
+16.1.1. Error Handling
+16.1.2. Executable Python Scripts
+16.1.3. The Interactive Startup File
+16.1.4. The Customization Module
